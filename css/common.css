@@ -49,6 +49,8 @@ body {
 
 .main-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-header {
@@ -243,4 +245,33 @@ body {
     &:hover {
         color: var(--yellow);
     }
+}
+
+
+.cloud-section {
+    /* background: #67A1BC; */
+    flex: 1;
+    background: linear-gradient(180deg, rgba(103, 161, 188, 1) 0%, rgba(144, 183, 191, 1) 100%);
+
+    min-height: 600px;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.cloud {
+    position: absolute;
+}
+
+.cloud.right {
+    right: 0;
+    top: 64px;
+}
+
+.cloud.left {
+    left: 0;
+    top: 32px;
+}
+
+.cloud.small {
+    left: 33%;
 }

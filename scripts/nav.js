@@ -7,7 +7,7 @@ function is_game_started() {
 function is_page_active(page_name) {
     const url_full = window.location.href;
     const found = url_full.search(page_name.toLowerCase());
-    
+
     if (url_full == "http://127.0.0.1:5500/" || url_full == "http://127.0.0.1:5500/index.html") {
         if (page_name == "HOME") {
             return true
@@ -25,9 +25,11 @@ const nav_links = [
 
 let nav_container = document.getElementById("main-nav");
 
-for (let button of nav_links) {
+function createNavButton(button) {
     nav_container.innerHTML += `<a class="nav-link 
         ${is_page_active(button.label) ? "active" : ""}
     "
     href="${button.link}">${button.label}</a>`;
 }
+
+nav_links.forEach(createNavButton);
